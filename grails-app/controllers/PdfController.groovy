@@ -43,7 +43,7 @@ class PdfController {
                 def content
                 if(params.template){
                     println "Template: $params.template"
-                    content = g.render(template:params.template, model:[params:params])
+                    content = g.render(template:params.template, model:[pdf:params])
                 }
                 else{
                     println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"

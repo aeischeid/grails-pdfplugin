@@ -58,7 +58,7 @@
 	    
 	    <h3>Here is some information gathered from a form and handled by a controller (post variables):</h3>
 	    <p>(if anyone can figure this out let me know...)</p>
-	    <p>Favorite food: ${food}</p>
-	    <p>Hometown: ${hometown}</p> 
+	    <p>Favorite food: ${pdf?.food}</p>
+	    <p>Hometown: ${pdf?.hometown}</p> 
     </body>
 </html>
