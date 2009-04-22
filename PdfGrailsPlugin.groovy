@@ -1,6 +1,6 @@
 class PdfGrailsPlugin {
     // the plugin version
-    def version = "0.1"
+    def version = "0.4"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.1 > *"
     // the other plugins this plugin depends on
@@ -11,12 +11,15 @@ class PdfGrailsPlugin {
     ]
 
     // TODO Fill in these fields
-    def author = "Your name"
-    def authorEmail = ""
-    def title = "Plugin summary/headline"
-    def description = '''\\
-Brief description of the plugin.
-'''
+    def author = "Aaron Eischeid"
+    def authorEmail = "a.eischeid@gmail.com"
+    def title = "Provides a simple way to generate PDFs from web pages"
+    def description = '''
+    Pdf plugin allows your Grails application to generate PDFs and send them
+    to the browser by converting existing pages in your application to PDF
+    on the fly. The underlying system uses the xhtmlrenderer component from java.net
+    to do the rendering.
+    '''
 
     // URL to the plugin's documentation
     def documentation = "http://grails.org/Pdf+Plugin"
