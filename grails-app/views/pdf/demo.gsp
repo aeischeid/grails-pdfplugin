@@ -194,7 +194,7 @@
 	        	</td>
 	        </tr>
 	        <tr>
-	            <td rowspan="2" >2nd Post Example (not Working):</td>
+	            <td rowspan="2" >2nd Post Example using template:</td>
 	            <td>
 	                &lt;g:pdfForm template="demo2" filename="sample.pdf"&gt;...&lt;/g:pdfForm&gt;
 	            </td>

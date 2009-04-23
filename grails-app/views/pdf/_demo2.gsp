@@ -57,8 +57,11 @@
         <input type="checkbox" />--}%
 	    
 	    <h3>Here is some information gathered from a form and handled by a controller (post variables):</h3>
-	    <p>(if anyone can figure this out let me know...)</p>
 	    <p>Favorite food: ${pdf?.food}</p>
 	    <p>Hometown: ${pdf?.hometown}</p> 
+	    
+	    <p>One way to style gsp's that you intend to make into pdf's is to have two seperate style sheets one for media="print" and one for media="screen". The print style sheet will be used to style the PDF, and if PDF generation fails you will get a styled HTML view that isn't all weird because of fonts sized in pt and such.</p>
+	    
+	    <p>Varialbles passed into gsp that the plugin will render as PDF need to start with pdf. so for example the form field name was hometown and to reference that varialbe here we needed {pdf.hometown}</p>
     </body>
 </html>
