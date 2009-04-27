@@ -171,7 +171,7 @@
 	        	</td>
 	        </tr>
 	        <tr>
-	            <td rowspan="2" >Post Method (not Working):</td>
+	            <td rowspan="2" >Post Method:</td>
 	            <td>
 	                &lt;g:pdfForm controller="pdf" action="demo2" method="post"&gt;...&lt;/g:pdfForm&gt;
 	            </td>
