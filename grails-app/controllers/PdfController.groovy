@@ -83,7 +83,6 @@ class PdfController {
     	def today = new Date()
     	def tomorrow = today +1
     	def content = g.include(controller:"pdf", action:"sampleInclude", params:['today':today, 'tomorrow':tomorrow])
-    	println content
     	return ['content':content, 'pdf':params]
     }
     
