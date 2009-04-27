@@ -176,7 +176,7 @@
 	                &lt;g:pdfForm controller="pdf" action="demo2" method="post"&gt;...&lt;/g:pdfForm&gt;
 	            </td>
 	            <td rowspan="2">
-	                <g:pdfForm controller="pdf" action="demo2" method="post" >
+	                <g:pdfForm controller="pdf" action="demo3" method="post" >
 				    	food:<br />
 						<g:textField name="food" size="10"/>
 						<g:submitButton name="printPdf" value="pdf" />
@@ -185,9 +185,9 @@
 	        </tr>
 	        <tr>
 	        	<td>
-	        		&lt;form id="simplePdfForm" method="post" action="/pdf/pdf/pdfForm2" name="simplePdfForm"&gt;<br />
-	        		&lt;input type="hidden" value="pdf" name="controller"/&gt;<br />
-	        		&lt;input type="hidden" value="demo2" name="action"/&gt;<br />
+	        		&lt;form id="simplePdfForm" method="post" action="/pdf/pdf/pdfForm" name="simplePdfForm"&gt;<br />
+	        		&lt;input type="hidden" value="pdf" name="pdfController"/&gt;<br />
+	        		&lt;input type="hidden" value="demo3" name="pdfAction"/&gt;<br />
 					&lt;input type="hidden" value="document.pdf" name="filename"/&gt;<br />
 	        		 ...<br /> 
 	        		&lt;/form&gt;

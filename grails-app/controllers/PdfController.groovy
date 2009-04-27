@@ -47,7 +47,7 @@ class PdfController {
                 }
                 else{
                     println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
-                    content = g.include(controller:params.controller, action:params.action)
+                    content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
                 }
             	b = pdfService.buildPdfFromString(content)
             }
@@ -77,6 +77,22 @@ class PdfController {
     	def food = params.food
     	def hometown = params.hometown
     	return [id:id, name:name, age:age, randomString:randomString, food:food, hometown:hometown]
+    }
+    
+    def demo3 = {
+    	def today = new Date()
+    	def tomorrow = today +1
+    	def content = g.include(controller:"pdf", action:"sampleInclude", params:['today':today, 'tomorrow':tomorrow])
+    	println content
+    	return ['content':content]
+    }
+    
+    def sampleInclude = {
+    	def bar = 'foo'
+    	def today = params?.today
+    	def tomorrow = params?.tomorrow
+    	return ['bar':bar, 'today':today, 'tomorrow':tomorrow]
+//    	[today:today, tomorrow:tomorrow]
     }
 }
 
