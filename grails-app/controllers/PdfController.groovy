@@ -8,6 +8,7 @@ class PdfController {
     }
 
     def pdfLink = {
+        //TODO: enable PDF link to use new string method in addition to url method
         def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort +
                     grailsAttributes.getApplicationUri(request)
         println "BaseUri is $baseUri"

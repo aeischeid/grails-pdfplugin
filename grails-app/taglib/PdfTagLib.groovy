@@ -14,6 +14,7 @@ class PdfTagLib {
      *
      */
     def pdfLink = { attrs, body ->
+        //TODO: enable pdfLink to accept controller, action, params, in adition to url method.
         String link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
                       params: [url: attrs.url, filename: attrs.filename ?: 'document.pdf'] ] )
         String c = attrs['class'] ?: 'pdf'

@@ -52,6 +52,7 @@
 		        </tr>
 	        </tbody>
 	    </table> 
+	    <img src="<g:resource dir='images' file='laptop.jpg' />" alt="laptop" title="laptop" />
 	    
 %{--	For some reason checkboxes cause major error with pdf renderer. uncomment this to see    
         <input type="checkbox" />--}%
