@@ -53,8 +53,11 @@
 	        </tbody>
 	    </table> 
 	    
-%{--	For some reason checkboxes cause major error with pdf renderer. uncomment this to see    
-        <input type="checkbox" />--}%
+%{--	For some reason checkboxes cause major error with pdf renderer. uncomment this to see    --}%
+        <input type="checkbox" />
+        
+        image:
+        <img src="<g:resource dir='images' file='laptop.jpg' />" alt="laptop" title="laptop" />
 	    
 	    <h3>Here is some information gathered from a form and handled by a controller (post variables):</h3>
 	    <p>Favorite food: ${pdf?.food}</p>
