@@ -1,10 +1,15 @@
-//
-// This script is executed by Grails after plugin was installed to project.
-// This script is a Gant script so you can use all special variables provided
-// by Gant (such as 'baseDir' which points on project base dir). You can
-// use 'ant' to access a global instance of AntBuilder
-//
-// For example you can create directory under project tree:
-//
-//    ant.mkdir(dir:"${basedir}/grails-app/jobs")
-//
+
+Ant.mkdir(dir:"${basedir}/grails-app/views/pdf")
+Ant.copy(file:"${pluginBasedir}/grails-app/views/demo.gsp",
+         todir:"${basedir}/grails-app/views/pdf")
+Ant.copy(file:"${pluginBasedir}/grails-app/views/demo2.gsp",
+         todir:"${basedir}/grails-app/views/pdf")
+Ant.copy(file:"${pluginBasedir}/grails-app/views/_demo2.gsp",
+		 todir:"${basedir}/grails-app/views/pdf")	
+Ant.copy(file:"${pluginBasedir}/grails-app/views/demo3.gsp",
+         todir:"${basedir}/grails-app/views/pdf")
+Ant.copy(file:"${pluginBasedir}/grails-app/views/sampleInclude.gsp",
+         todir:"${basedir}/grails-app/views/pdf")
+         
+//this script installs the demo files for the PDF plugin. The file and the directory can be 
+//removed easily, and by the way this is my first GANT script :)
