@@ -32,9 +32,9 @@ class PdfController {
     def pdfForm = {
         try{
             byte[] b
+            def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort +
+                            grailsAttributes.getApplicationUri(request)
             if(request.method == "GET") {            
-                def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort +
-                              grailsAttributes.getApplicationUri(request)
                 def url = baseUri + params.url + '?' + request.getQueryString()
                 println "BaseUri is $baseUri"
                 println "Fetching url $url"
@@ -50,7 +50,7 @@ class PdfController {
                     println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
                     content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
                 }
-            	b = pdfService.buildPdfFromString(content)
+            	b = pdfService.buildPdfFromString(content, baseUri)
             }
     		response.setContentType("application/pdf")
             response.setHeader("Content-disposition", "attachment; filename=" + (params.filename ?: "document.pdf"))

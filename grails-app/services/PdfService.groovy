@@ -27,14 +27,15 @@ class PdfService {
         }
     }
     
-/*  A Simple fetcher to turn a well formated HTML string into a PDF.  */
-    byte[] buildPdfFromString(content) {
+/*  A Simple fetcher to turn a well formated XHTML string into a PDF. 
+	The baseUri is included to allow for relative URL's in the XHTML string */
+    byte[] buildPdfFromString(content, baseUri) {
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
         ITextRenderer renderer = new ITextRenderer();
         try {
-        	renderer.setDocumentFromString(content);
+        	renderer.setDocumentFromString(content, baseUri);
         	renderer.layout();
         	renderer.createPDF(baos);
         	byte[] b = baos.toByteArray();
