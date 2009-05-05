@@ -56,8 +56,12 @@
 %{--	For some reason checkboxes cause major error with pdf renderer. uncomment this to see    --}%
         <input type="checkbox" />
         
-        image:
-        <img src="<g:resource dir='images' file='laptop.jpg' />" alt="laptop" title="laptop" />
+        <p>Images with relative URL's won't render in PDFs generated via post method because XHTMLrenderer 
+	    is unaware of the baseUri:</p>
+	    <img src="<g:resource dir='images' file='laptop.jpg' />" alt="laptop" title="laptop" />
+	    
+	    <p>However images with absolute URI's do just fine:</p>
+	    <img src="http://system76.com/images/nb1_front_med.jpg" alt="laptop2" title="laptop2" />
 	    
 	    <h3>Here is some information gathered from a form and handled by a controller (post variables):</h3>
 	    <p>Favorite food: ${pdf?.food}</p>

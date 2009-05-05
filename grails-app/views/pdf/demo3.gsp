@@ -62,8 +62,12 @@
 	    
 	    <p>${pdf}</p>
 	    
-	    images don't show up here, the method used to generate PDF's via the post method and thus allow secured pdf's essentially reads the gsp as a string and renders the pdf from the string which is well formed html... this no images and external style sheets probably wouldn't work either BTW:
+	    <p>Images with relative URL's won't render in PDFs generated via post method because XHTMLrenderer 
+	    is unaware of the baseUri:</p>
 	    <img src="<g:resource dir='images' file='laptop.jpg' />" alt="laptop" title="laptop" />
+	    
+	    <p>However images with absolute URI's do just fine:</p>
+	    <img src="http://system76.com/images/nb1_front_med.jpg" alt="laptop2" title="laptop2" />
 	    
 	    <p>One way to style gsp's that you intend to make into pdf's is to have two seperate style sheets one for media="print" and one for media="screen". The print style sheet will be used to style the PDF, and if PDF generation fails you will get a styled HTML view that isn't all weird because of fonts sized in pt and such.</p>
 	    
