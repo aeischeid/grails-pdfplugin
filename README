@@ -1,0 +1,18 @@
+Grails PDF Plugin
+author: Aaron Eischeid
+
+Pdf plugin allows a Grails application to generate PDFs and send them
+to the browser by converting existing pages in your application to PDF
+on the fly. The underlying system uses the xhtmlrenderer component from java.net
+along with iText to do the rendering.
+
+Install the plugin from the grails repositories using the grails command:
+    "grails install-plugin pdf"
+Or you can use the zip file on Github.
+    "grails install-plugin [path/to/zip/file]"
+
+<------------>
+    Usage:
+<------------>
+
+TODO: fill in documentation here...
