@@ -15,4 +15,51 @@ Or you can use the zip file on Github.
     Usage:
 <------------>
 
-TODO: fill in documentation here...
+The plugin is really easy to use. Basically just use the tag libraries as described
+in the demo.gsp and the gsp that you reference in the tag will be rendered as a 
+PDF file. You should probably make some effort to style the PDF for print media
+and the XHTMLrenderer under the hood provides some help in this area by enabling 
+the use of certain CSS 3 properties.
+
+That is really all there is to it...
+
+There are a couple things to watch out for.
+
+The first thing is that form elements pretty much just get ignored in the PDF 
+rendering process, and that can leave unpredictable spaces (or lack of spaces) in 
+the page.
+
+The second thing is that the underlying renderer ignores javascript. So pages that
+have javascript effects, or content added via AJAX will not render as they would
+in a web browser. This is not a bug! PDF's are meant to be static documents, and
+web pages usually aren't. However, a number of people have expressed interest in
+the ability of the plugin to render a snapshot of the page as it appears in the 
+browser at any given moment, and that is very doable, it just hasn't been added 
+yet.
+
+A common question is what happens to images. 
+Images and externally linked CSS files should be automatically resolved. 
+
+<------------------->
+  Tag Documentation
+<------------------->
+
+g:pdfLink
+attributes:
+
+    * url (required) - the url of the gsp to want to convert to PDF
+    * filename (optional) - what you want the filename of the resultant PDF to be - defualt = 'document.pdf'
+    * icon (optional) - will add and <img … /> tag
+    * class (optional) - set the class of element - default = 'pdf'
+
+g:pdfForm
+attributes:
+
+    * url (required) - the url of the gsp to want to convert to PDF
+    * filename (optional) - what you want the filename of the resultant PDF to be
+    * name (optional) - becomes the name and id of HTML form - default = 'simplePdfForm'
+    * method (optional) - the method of the form - default = 'get'
+    * template (optional) - template you want to render as a pdf, method must = post (since 0.4)
+    * controller (optional) - requires action method='post' (since 0.4)
+    * action (optional) - controller action for rendering PDF (since 0.4)
+
