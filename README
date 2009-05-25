@@ -47,9 +47,9 @@ Images and externally linked CSS files should be automatically resolved.
 g:pdfLink
 attributes:
 
-    * url (required) - the url of the gsp to want to convert to PDF
+    * url (required) - the url of the gsp you want to convert to PDF
     * filename (optional) - what you want the filename of the resultant PDF to be - defualt = 'document.pdf'
-    * icon (optional) - will add and <img … /> tag
+    * icon (optional) - will add an <img … /> tag
     * class (optional) - set the class of element - default = 'pdf'
 
 g:pdfForm
