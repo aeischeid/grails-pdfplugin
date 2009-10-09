@@ -62,14 +62,13 @@
 	    
 	    <p>${pdf}</p>
 	    
-	    <p>Images with relative URL's won't render in PDFs generated via post method because XHTMLrenderer 
-	    is unaware of the baseUri:</p>
+	    <p>Images with relative URL's are automatically resolved by the the modified version of XHTMLrenderer included with the plugin</p>
 	    <img src="<g:resource dir='images' file='laptop.jpg' />" alt="laptop" title="laptop" />
 	    
-	    <p>However images with absolute URI's do just fine:</p>
+	    <p>Images with absolute URI's also do just fine:</p>
 	    <img src="http://system76.com/images/nb1_front_med.jpg" alt="laptop2" title="laptop2" />
 	    
-	    <p>One way to style gsp's that you intend to make into pdf's is to have two seperate style sheets one for media="print" and one for media="screen". The print style sheet will be used to style the PDF, and if PDF generation fails you will get a styled HTML view that isn't all weird because of fonts sized in pt and such.</p>
+	    <p><strong>Hint:</strong> One way to style gsp's that you intend to make into pdf's is to have two seperate style sheets one for media="print" and one for media="screen". The print style sheet will be used to style the PDF, and if PDF generation fails you will get a styled HTML view that isn't all weird because of fonts sized in pt and such.</p>
 	    
 	    <p>Varialbles passed into gsp that the plugin will render as PDF need to start with pdf. so for example the form field name was hometown and to reference that varialbe here we needed {pdf.hometown}</p>
 	    <code>
