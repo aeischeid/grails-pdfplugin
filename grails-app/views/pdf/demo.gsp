@@ -8,8 +8,8 @@
         width:80%;
         background-color:#b2b2b2;
       }
-        .code_table tr {padding:2px;}
-        .code_table td {
+      .code_table tr {padding:2px;}
+      .code_table td {
         padding:7px;
         background-color: #fff;
       }
