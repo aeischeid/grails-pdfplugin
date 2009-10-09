@@ -30,6 +30,7 @@
         </tr>
       </thead>
       <tbody>
+        <tr><td colspan="3"><em>GET method examples:</em></td></tr>
         <tr>
           <td rowspan="2" >Simple Usage:</td>
           <td>
@@ -121,7 +122,7 @@
             </code>
           </td>
         </tr>
-        <tr><td colspan="3"><em>post method examples:</em></td></tr>
+        <tr><td colspan="3"><em>POST method examples:</em></td></tr>
       </tbody>
     </table>
     
@@ -135,6 +136,7 @@
         </tr>
       </thead>
       <tbody>
+        <tr><td colspan="3"><em>GET method examples:</em></td></tr>
         <tr>
           <td rowspan="2" >Simple Usage:</td>
           <td>
@@ -182,7 +184,7 @@
             </code>
           </td>
         </tr>
-        <tr><td colspan="3"><em>post method examples:</em></td></tr>
+        <tr><td colspan="3"><em>POST method examples:</em></td></tr>
         <tr>
           <td rowspan="2" >Controller and Action:</td>
           <td>
@@ -236,7 +238,7 @@
         <tr>
           <td rowspan="2" >Template:</td>
           <td>
-            <code>&lt;g:pdfForm template="demo2" filename="sample.pdf"&gt;...&lt;/g:pdfForm&gt;</code>
+            <code>&lt;g:pdfForm template="demo2" &gt;...&lt;/g:pdfForm&gt;</code>
           </td>
           <td rowspan="2">
             <g:pdfForm template="demo2" method="post">
@@ -251,14 +253,13 @@
             <code>
             &lt;form id="simplePdfForm" method="post" action="/pdf/pdf/pdfForm2" name="simplePdfForm"&gt;<br />
             &lt;input type="hidden" value="demo2" name="template"/&gt;<br />
-            &lt;input type="hidden" value="sample.pdf" name="filename"/&gt;<br />
             ...<br /> 
             &lt;/form&gt;
             </code>
           </td>
         </tr>
         <tr>
-          <td rowspan="2" >Template, Id, and Filename:</td>
+          <td rowspan="2" >Template and Filename:</td>
           <td>
             <code>&lt;g:pdfForm template="demo2" filename="sample.pdf"&gt;...&lt;/g:pdfForm&gt;</code>
           </td>

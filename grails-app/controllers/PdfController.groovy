@@ -53,7 +53,7 @@ class PdfController {
         }
         else{
           //println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
-          content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
+          content = g.include(controller:params.pdfController, action:params.pdfAction, id:params.id, params:params)
         }
         b = pdfService.buildPdfFromString(content, baseUri)
       }
@@ -89,7 +89,7 @@ class PdfController {
     def today = new Date()
     def tomorrow = today +1
     def content = g.include(controller:"pdf", action:"sampleInclude", params:['today':today, 'tomorrow':tomorrow])
-    return ['content':content, 'pdf':params]
+    return ['content':content, 'pdf':params, 'id':params.id]
   }
 
   def sampleInclude = {

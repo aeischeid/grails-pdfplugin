@@ -16,6 +16,7 @@ class PdfTagLib {
     String template = attrs['template']
     String controller = attrs['controller']
     String action = attrs['action']
+    String id = attrs['id']
     String url = attrs['url']
     String filename = attrs['filename'] ?: 'document.pdf'
     String link
@@ -31,7 +32,7 @@ class PdfTagLib {
     }
     if(controller){
       link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
-             params: [pdfAction: "${action}", pdfController: "${controller}", filename: "${filename}"] ] )
+             params: [pdfAction: "${action}", pdfController: "${controller}", pdfId: "${id}"filename: "${filename}"] ] )
     }
     out << """
       <a href="${link}" class="${c}" title="pdf">
@@ -80,11 +81,6 @@ class PdfTagLib {
       out << """
         <input type='hidden' name='template' value="${template}" />
       """
-      if(id){
-        out << """
-          <input type='hidden' name='id' value="${id}" />
-        """
-      }
     }
     else{
       out << """
