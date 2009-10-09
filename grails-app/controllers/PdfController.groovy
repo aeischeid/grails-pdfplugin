@@ -5,13 +5,25 @@ class PdfController {
   def index = { redirect(action: demo) }
 
   def pdfLink = {
-    //TODO: enable PDF link to use new string method in addition to url method
-    def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort + grailsAttributes.getApplicationUri(request)
-    println "BaseUri is $baseUri"
-    def url = baseUri + params.url
-    println "Fetching url $url"
     try{
-      byte[] b = pdfService.buildPdf(url)
+      byte[] b
+      def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort + grailsAttributes.getApplicationUri(request)
+      if(params.method == "post") {
+        def content
+        if(params.template){
+          println "Template: $params.template"
+          content = g.render(template:params.template, model:[pdf:params])
+        }
+        else{
+          println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
+          content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
+        }
+        b = pdfService.buildPdfFromString(content, baseUri)
+      }
+      else{
+        def url = baseUri + params.url
+        b = pdfService.buildPdf(url)
+      }
       response.setContentType("application/pdf")
       response.setHeader("Content-disposition", "attachment; filename=" + (params.filename ?: "document.pdf"))
       response.setContentLength(b.length)
@@ -27,20 +39,20 @@ class PdfController {
     try{
       byte[] b
       def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort + grailsAttributes.getApplicationUri(request)
-      if(request.method == "GET") {            
+      if(request.method == "GET") {
         def url = baseUri + params.url + '?' + request.getQueryString()
-        println "BaseUri is $baseUri"
-        println "Fetching url $url"
+        //println "BaseUri is $baseUri"
+        //println "Fetching url $url"
         b = pdfService.buildPdf(url)
       }
       if(request.method == "POST"){
         def content
         if(params.template){
-          println "Template: $params.template"
+          //println "Template: $params.template"
           content = g.render(template:params.template, model:[pdf:params])
         }
         else{
-          println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
+          //println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
           content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
         }
         b = pdfService.buildPdfFromString(content, baseUri)

@@ -13,14 +13,30 @@ class PdfTagLib {
     */
 
   def pdfLink = { attrs, body ->
-    //TODO: enable pdfLink to accept controller, action, params, in adition to url method.
-    String link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
-                  params: [url: attrs.url, filename: attrs.filename ?: 'document.pdf'] ] )
+    String template = attrs['template']
+    String controller = attrs['controller']
+    String action = attrs['action']
+    String url = attrs['url']
+    String filename = attrs['filename'] ?: 'document.pdf'
+    String link
+    // class attribute is for CSS styling
     String c = attrs['class'] ?: 'pdf'
-    
+    if(url){
+      link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
+             params: [url: attrs.url, filename: attrs.filename ?: 'document.pdf'] ] )
+    }
+    if(template){
+      link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
+             params: [template: "${template}", filename: attrs.filename ?: 'document.pdf'] ] )
+    }
+    if(controller){
+      link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
+             params: [pdfAction: "${action}", pdfController: "${controller}", filename: "${filename}"] ] )
+    }
     out << """
       <a href="${link}" class="${c}" title="pdf">
     """
+    // setup icon/button inside of link if icon is set to 'true'
     if (attrs.icon) {
       out << "<img src='"
       out << createLinkTo(dir:'images', file:'pdf_button.png')
@@ -41,14 +57,19 @@ class PdfTagLib {
     String template = attrs['template']
     String controller = attrs['controller']
     String action = attrs['action']
+    String id = attrs['id']
     String filename = attrs['filename'] ?: 'document.pdf'
     String method = attrs['method'] ?: 'get'
     def uri = createLink(url: [controller: 'pdf', action:'pdfForm' ])
     
     out << """
       <form name="${formName}" class="${formName}" action="${uri}" method="${method}">
-      <input type="hidden" name="filename" value="${filename}" />
     """
+    if(filename){
+      out << """
+        <input type="hidden" name="filename" value="${filename}" />
+      """
+    }
     
     if(url){
       out << """
@@ -59,12 +80,22 @@ class PdfTagLib {
       out << """
         <input type='hidden' name='template' value="${template}" />
       """
+      if(id){
+        out << """
+          <input type='hidden' name='id' value="${id}" />
+        """
+      }
     }
     else{
       out << """
         <input type='hidden' name='pdfController' value="${controller}" />
         <input type='hidden' name='pdfAction' value="${action}" />
       """
+      if(id){
+        out << """
+          <input type='hidden' name='id' value="${id}" />
+        """
+      }
     }
     out << body()
     out << "</form>"

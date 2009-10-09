@@ -16,7 +16,7 @@
     </style>
   </head>
     <body>
-    <h1>Sample PDF Plugin demo page</h1>
+    <h1>Grails PDF Plugin demo page</h1>
     
     <h2>Tag Documentation / Live Examples</h2>
     <h3>pdfLink tag:</h3>
@@ -113,7 +113,7 @@
         </tr>
         <tr>
           <td>
-            </code>
+            <code>
             &lt;a class="myPdfLink" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf"&gt; <br />
             &lt;img border="0" alt="PDF Version" src="/pdf/images/pdf_button.png" /&gt; <br />
             Custom link<br />
@@ -121,6 +121,7 @@
             </code>
           </td>
         </tr>
+        <tr><td colspan="3"><em>post method examples:</em></td></tr>
       </tbody>
     </table>
     
@@ -181,8 +182,9 @@
             </code>
           </td>
         </tr>
+        <tr><td colspan="3"><em>post method examples:</em></td></tr>
         <tr>
-          <td rowspan="2" >Post Method:</td>
+          <td rowspan="2" >Controller and Action:</td>
           <td>
             <code>&lt;g:pdfForm controller="pdf" action="demo3" method="post"&gt;...&lt;/g:pdfForm&gt;</code>
           </td>
@@ -207,7 +209,56 @@
           </td>
         </tr>
         <tr>
-          <td rowspan="2" >2nd Post Example using template:</td>
+          <td rowspan="2" >Controller, Action, Id and Filename:</td>
+          <td>
+            <code>&lt;g:pdfForm controller="pdf" action="demo3" method="post"&gt;...&lt;/g:pdfForm&gt;</code>
+          </td>
+          <td rowspan="2">
+            <g:pdfForm controller="pdf" action="demo3" id="1942" method="post" filename="sample.pdf" >
+            food:<br />
+            <g:textField name="food" size="10"/>
+            <g:submitButton name="printPdf" value="pdf" />
+            </g:pdfForm>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>
+            &lt;form id="simplePdfForm" method="post" action="/pdf/pdf/pdfForm" name="simplePdfForm"&gt;<br />
+            &lt;input type="hidden" value="pdf" name="pdfController"/&gt;<br />
+            &lt;input type="hidden" value="demo3" name="pdfAction"/&gt;<br />
+            &lt;input type="hidden" value="document.pdf" name="filename"/&gt;<br />
+            ...<br /> 
+            &lt;/form&gt;
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2" >Template:</td>
+          <td>
+            <code>&lt;g:pdfForm template="demo2" filename="sample.pdf"&gt;...&lt;/g:pdfForm&gt;</code>
+          </td>
+          <td rowspan="2">
+            <g:pdfForm template="demo2" method="post">
+            hometown:<br />
+            <g:textField name="hometown" size="10"/>
+            <g:submitButton name="printPdf" value="pdf" />
+            </g:pdfForm>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>
+            &lt;form id="simplePdfForm" method="post" action="/pdf/pdf/pdfForm2" name="simplePdfForm"&gt;<br />
+            &lt;input type="hidden" value="demo2" name="template"/&gt;<br />
+            &lt;input type="hidden" value="sample.pdf" name="filename"/&gt;<br />
+            ...<br /> 
+            &lt;/form&gt;
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2" >Template, Id, and Filename:</td>
           <td>
             <code>&lt;g:pdfForm template="demo2" filename="sample.pdf"&gt;...&lt;/g:pdfForm&gt;</code>
           </td>
