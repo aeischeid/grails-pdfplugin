@@ -5,7 +5,7 @@ Ant.copy(file:"${pluginBasedir}/grails-app/views/pdf/demo.gsp",
 Ant.copy(file:"${pluginBasedir}/grails-app/views/pdf/demo2.gsp",
          todir:"${basedir}/grails-app/views/pdf")
 Ant.copy(file:"${pluginBasedir}/grails-app/views/pdf/_demo2.gsp",
-		 todir:"${basedir}/grails-app/views/pdf")	
+         todir:"${basedir}/grails-app/views/pdf")	
 Ant.copy(file:"${pluginBasedir}/grails-app/views/pdf/demo3.gsp",
          todir:"${basedir}/grails-app/views/pdf")
 Ant.copy(file:"${pluginBasedir}/grails-app/views/pdf/sampleInclude.gsp",

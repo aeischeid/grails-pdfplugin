@@ -1,4 +1,4 @@
-<plugin name='pdf' version='0.4.5' grailsVersion='1.1 &gt; *'>
+<plugin name='pdf' version='0.5.0' grailsVersion='1.1 &gt; *'>
   <author>Aaron Eischeid</author>
   <authorEmail>a.eischeid@gmail.com</authorEmail>
   <title>Provides a simple way to generate PDFs from web pages</title>
