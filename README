@@ -10,6 +10,14 @@ Install the plugin from the grails repositories using the grails command:
     "grails install-plugin pdf"
 Or you can use the zip file on Github.
     "grails install-plugin [path/to/zip/file]"
+    
+<------------>
+    Notes:
+<------------>
+currently working on new release 0.4.8. current source is not functional for POST type
+requests. significant piece is packaging and get a new version into the official
+grails repos thanks to the new zipOnly option this should be easier. Next will be
+some new features and code rewriting for a 0.5.0 release.
 
 <------------>
     Usage:
