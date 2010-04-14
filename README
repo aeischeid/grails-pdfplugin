@@ -19,7 +19,7 @@ The plugin is really easy to use. Basically just use the tag libraries as descri
 in the demo.gsp and the gsp that you reference in the tag will be rendered as a 
 PDF file. You should probably make some effort to style the PDF for print media
 and the XHTMLrenderer under the hood provides some help in this area by enabling 
-the use of certain CSS 3 properties.
+the use of certain CSS3 properties.
 
 That is really all there is to it...
 

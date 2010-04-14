@@ -1,3 +1,5 @@
+package pdf
+
 class PdfController {
 
   PdfService pdfService
