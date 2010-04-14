@@ -9,7 +9,11 @@ class PdfControllerTests extends ControllerUnitTestCase {
         super.tearDown()
     }
 
-    void testSomething() {
+    void testPdfLinkAction() {
 
+    }
+    
+    void testPdfFormAction() {
+    
     }
 }

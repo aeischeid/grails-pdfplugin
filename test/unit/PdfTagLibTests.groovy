@@ -9,7 +9,11 @@ class PdfTagLibTests extends TagLibUnitTestCase {
         super.tearDown()
     }
 
-    void testSomething() {
-
+    void testPdfLinkTag() {
+      
+    }
+    
+    void testPdfFormTag() {
+      
     }
 }
