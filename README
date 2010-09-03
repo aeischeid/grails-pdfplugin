@@ -65,10 +65,13 @@ g:pdfLink
 attributes:
 
     * url (required) - the url of the gsp you want to convert to PDF
-    * filename (optional) - what you want the filename of the resultant PDF to be - defualt = 'document.pdf'
+    * filename (optional) - what you want the filename of the resultant PDF to be
+                            - defualt = 'document.pdf'
     * icon (optional) - will add an <img … /> tag
     * class (optional) - set the class of element - default = 'pdf'
-    * method (optional) - the method of the form - default = 'get' (since 0.5)
+    * template (optional) - render given template gsp as a pdf (since 0.5)
+    * controller (optional) - like you would expect... (since 0.5)
+    * action (optional) - like you would expect... (since 0.5)
 
 g:pdfForm
 attributes:

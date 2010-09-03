@@ -11,17 +11,15 @@ class PdfController {
       byte[] b
       def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort + grailsAttributes.getApplicationUri(request)
       // def baseUri = g.createLink(uri:"/", absolute:"true").toString()
-      if(params.method == "post") {
-        def content
-        if(params.template){
-          println "Template: $params.template"
-          content = g.render(template:params.template, model:[pdf:params])
-        }
-        else{
-          println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
-          content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
-        }
-        b = pdfService.buildPdfFromString(content.toString(), baseUri)
+      if(params.pdfTemplate){
+        println "Template: $params.template"
+        def content = g.render(template:params.template, model:[pdf:params])
+        b = pdfService.buildPdfFromString(content.readAsString(), baseUri)
+      }
+      if(params.pdfController){
+        println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
+        content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
+        b = pdfService.buildPdfFromString(content.readAsString(), baseUri)
       }
       else{
         def url = baseUri + params.url
@@ -34,7 +32,9 @@ class PdfController {
     }
     catch (Throwable e) {
       println "there was a problem with PDF generation ${e}"
-      redirect(uri:params.url + '?' + request.getQueryString())
+      if(params.pdfTemplate) render(template:params.template)
+      if(params.pdfController) redirect(controller:params.pdfController, action:params.pdfAction, params:params)
+      else redirect(uri:params.url + '?' + request.getQueryString())
     }
   }
 
@@ -58,7 +58,7 @@ class PdfController {
         else{
           content = g.include(controller:params.pdfController, action:params.pdfAction, id:params.id, params:params)
         }
-        b = pdfService.buildPdfFromString(content.toString(), baseUri)
+        b = pdfService.buildPdfFromString(content.readAsString(), baseUri)
       }
       response.setContentType("application/pdf")
       response.setHeader("Content-disposition", "attachment; filename=" + (params.filename ?: "document.pdf"))
@@ -67,7 +67,9 @@ class PdfController {
     }
     catch (Throwable e) {
       println "there was a problem with PDF generation ${e}"
-      redirect(uri:params.url + '?' + request.getQueryString())
+      if(params.template) render(template:params.template)
+      if(params.url) redirect(uri:params.url + '?' + request.getQueryString())
+      else redirect(controller:params.pdfController, action:params.pdfAction, params:params)
     }
   }
 

@@ -43,7 +43,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2&filename=document.pdf&method=get"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2&filename=document.pdf&method=url"&gt;<br />
             PDF View <br />
             &lt;/a&gt;
             </code>
@@ -61,7 +61,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2%2F5%3Fname%3Dbob%26age%3D22&filename=document.pdf&method=get"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2%2F5%3Fname%3Dbob%26age%3D22&filename=document.pdf&method=url"&gt;<br />
             PDF View <br />
             &lt;/a&gt;
             </code>
@@ -79,7 +79,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=get"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=url"&gt;<br />
             sample.pdf<br />
             &lt;/a&gt;
             </code>
@@ -97,7 +97,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=get"&gt; <br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=url"&gt; <br />
             &lt;img border="0" alt="PDF Version" src="/pdf/images/pdf_button.png" /&gt; <br />
             &lt;/a&gt;
             </code>
@@ -115,7 +115,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="myPdfLink" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=get"&gt; <br />
+            &lt;a class="myPdfLink" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=url"&gt; <br />
             &lt;img border="0" alt="PDF Version" src="/pdf/images/pdf_button.png" /&gt; <br />
             Custom link<br />
             &lt;/a&gt;
@@ -123,6 +123,42 @@
           </td>
         </tr>
         <tr><td colspan="3"><em>POST method examples:</em></td></tr>
+        <tr>
+          <td rowspan="2" >Simple Usage:</td>
+          <td>
+            <code>&lt;g:pdfLink url="/pdf/demo2" method="string"&gt;PDF View&lt;/g:pdfLink&gt;</code>
+          </td>
+          <td rowspan="2">
+            <g:pdfLink url="/pdf/demo2" method="string">PDF View</g:pdfLink>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2&filename=document.pdf&method=string"&gt;<br />
+            PDF View <br />
+            &lt;/a&gt;
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2" >Simple Usage w/ Get data:</td>
+          <td>
+            <code>&lt;g:pdfLink url="/pdf/demo2/5?name=bob&age=22" method="string"&gt;PDF View&lt;/g:pdfLink&gt;</code>
+          </td>
+          <td rowspan="2">
+            <g:pdfLink url="/pdf/demo2/5?name=bob&age=22" method="string">PDF View</g:pdfLink>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2%2F5%3Fname%3Dbob%26age%3D22&filename=document.pdf&method=string"&gt;<br />
+            PDF View <br />
+            &lt;/a&gt;
+            </code>
+          </td>
+        </tr>
       </tbody>
     </table>
     
