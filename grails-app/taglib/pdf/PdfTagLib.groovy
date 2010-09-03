@@ -16,9 +16,10 @@ class PdfTagLib {
 
   def pdfLink = { attrs, body ->
     String template = attrs['template']
-    String controller = attrs['controller']
-    String action = attrs['action']
-    String id = attrs['id']
+    String pdfController = attrs['pdfController']
+    String pdfAction = attrs['pdfAction']
+    String pdfId = attrs['pdfId']
+    String pdfParams = attrs['pdfParams']
     String url = attrs['url']
     String filename = attrs['filename'] ?: 'document.pdf'
     String link
@@ -32,9 +33,9 @@ class PdfTagLib {
       link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
              params: [template: "${template}", filename: "${filename}"] ] )
     }
-    if(controller){
-      link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink', id: ${id},
-             params: [pdfAction: "${action}", pdfController: "${controller}", filename: "${filename}"] ] )
+    if(pdfController){
+      link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
+             params: [pdfController: "${pdfController}", pdfAction: "${pdfAction}", pdfParams: "${pdfParams}", filename: "${filename}"] ] )
     }
     out << """
       <a href="${link}" class="${c}" title="pdf">

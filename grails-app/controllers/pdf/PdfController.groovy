@@ -18,7 +18,7 @@ class PdfController {
       }
       if(params.pdfController){
         println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
-        content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
+        def content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
         b = pdfService.buildPdfFromString(content.readAsString(), baseUri)
       }
       else{
