@@ -20,7 +20,7 @@ class PdfController {
           println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
           content = g.include(controller:params.pdfController, action:params.pdfAction, params:params)
         }
-        b = pdfService.buildPdfFromString(content, baseUri)
+        b = pdfService.buildPdfFromString(content.toString(), baseUri)
       }
       else{
         def url = baseUri + params.url
@@ -57,7 +57,7 @@ class PdfController {
           //println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
           content = g.include(controller:params.pdfController, action:params.pdfAction, id:params.id, params:params)
         }
-        b = pdfService.buildPdfFromString(content, baseUri)
+        b = pdfService.buildPdfFromString(content.toString(), baseUri)
       }
       response.setContentType("application/pdf")
       response.setHeader("Content-disposition", "attachment; filename=" + (params.filename ?: "document.pdf"))
