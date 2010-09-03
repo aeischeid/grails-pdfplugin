@@ -17,7 +17,7 @@ Or you can use the zip file on Github.
 pending 0.5 version. Fix for major brokenness. POST type requests weren't
 working. Other significant piece is packaging and get a new version into the 
 official grails repos thanks to the new zipOnly option this should be easier. 
-Next will be some new features and code rewriting for a 0.5.0 release.
+Next will be ... I don't know?
 
 <------------>
     Usage:
@@ -33,7 +33,8 @@ That is really all there is to it...
 
 That said the plugin is pretty simple. and you could use the pdfService methods 
 directly from any controller, avoiding my weird tagLibs and controller altogether.
-just look at the included controller to get an idea of what you need to do.
+Just add an "import pdf" and "def pdfService" to your controller then look at 
+the included pdfController to get an idea of what you need to do.
 
 There are a couple things to watch out for when actaually rendering pdfs.
 
@@ -67,6 +68,7 @@ attributes:
     * filename (optional) - what you want the filename of the resultant PDF to be - defualt = 'document.pdf'
     * icon (optional) - will add an <img … /> tag
     * class (optional) - set the class of element - default = 'pdf'
+    * method (optional) - the method of the form - default = 'get' (since 0.5)
 
 g:pdfForm
 attributes:

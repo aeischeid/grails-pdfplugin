@@ -28,7 +28,7 @@ class PdfController {
         b = pdfService.buildPdf(url)
       }
       response.setContentType("application/pdf")
-      response.setHeader("Content-disposition", "attachment; filename=" + (params.filename ?: "document.pdf"))
+      response.setHeader("Content-disposition", "attachment; filename=${params.filename}")
       response.setContentLength(b.length)
       response.getOutputStream().write(b)
     }

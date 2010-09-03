@@ -21,20 +21,21 @@ class PdfTagLib {
     String id = attrs['id']
     String url = attrs['url']
     String filename = attrs['filename'] ?: 'document.pdf'
+    String method = attrs['method'] ?: 'get'
     String link
     // class attribute is for CSS styling
     String c = attrs['class'] ?: 'pdf'
     if(url){
       link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
-             params: [url: attrs.url, filename: attrs.filename ?: 'document.pdf'] ] )
+             params: [url: attrs.url, filename: "${filename}", method:"${method}"] ] )
     }
     if(template){
       link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
-             params: [template: "${template}", filename: attrs.filename ?: 'document.pdf'] ] )
+             params: [template: "${template}", filename: "${filename}", method:"${method}"] ] )
     }
     if(controller){
       link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink', id: ${id},
-             params: [pdfAction: "${action}", pdfController: "${controller}", filename: "${filename}"] ] )
+             params: [pdfAction: "${action}", pdfController: "${controller}", filename: "${filename}", method:"${method}"] ] )
     }
     out << """
       <a href="${link}" class="${c}" title="pdf">
