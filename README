@@ -64,7 +64,7 @@ I have experienced weirdness with CSS background images though... just play arou
 g:pdfLink
 attributes:
 
-    * url (required) - the url of the gsp you want to convert to PDF
+    * url (optional) - the url of the gsp you want to convert to PDF
     * filename (optional) - what you want the filename of the resultant PDF to be
                             - defualt = 'document.pdf'
     * icon (optional) - will add an <img … /> tag
@@ -76,7 +76,7 @@ attributes:
 g:pdfForm
 attributes:
 
-    * url (required) - the url of the gsp to want to convert to PDF
+    * url (optional) - the url of the gsp to want to convert to PDF
     * filename (optional) - what you want the filename of the resultant PDF to be
     * name (optional) - becomes the name and id of HTML form - default = 'simplePdfForm'
     * method (optional) - the method of the form - default = 'get'

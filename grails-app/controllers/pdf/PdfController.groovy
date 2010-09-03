@@ -11,7 +11,7 @@ class PdfController {
       byte[] b
       def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort + grailsAttributes.getApplicationUri(request)
       // def baseUri = g.createLink(uri:"/", absolute:"true").toString()
-      if(params.pdfTemplate){
+      if(params.template){
         println "Template: $params.template"
         def content = g.render(template:params.template, model:[pdf:params])
         b = pdfService.buildPdfFromString(content.readAsString(), baseUri)
@@ -32,7 +32,7 @@ class PdfController {
     }
     catch (Throwable e) {
       println "there was a problem with PDF generation ${e}"
-      if(params.pdfTemplate) render(template:params.template)
+      if(params.template) render(template:params.template)
       if(params.pdfController) redirect(controller:params.pdfController, action:params.pdfAction, params:params)
       else redirect(uri:params.url + '?' + request.getQueryString())
     }
