@@ -18,7 +18,7 @@
     <body>
     <h1>Grails PDF Plugin demo page</h1>
     
-    <h2>Tag Documentation / Live Examples</h2>
+    <h2>Tag Documentation / Live Examples / Functional Testing</h2>
     <h3>pdfLink tag:</h3>
     
     <table class="code_table">
@@ -43,7 +43,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2&filename=document.pdf"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2&filename=document.pdf&method=get"&gt;<br />
             PDF View <br />
             &lt;/a&gt;
             </code>
@@ -61,7 +61,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2%2F5%3Fname%3Dbob%26age%3D22&filename=document.pdf"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2%2F5%3Fname%3Dbob%26age%3D22&filename=document.pdf&method=get"&gt;<br />
             PDF View <br />
             &lt;/a&gt;
             </code>
@@ -79,7 +79,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=get"&gt;<br />
             sample.pdf<br />
             &lt;/a&gt;
             </code>
@@ -97,7 +97,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf"&gt; <br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=get"&gt; <br />
             &lt;img border="0" alt="PDF Version" src="/pdf/images/pdf_button.png" /&gt; <br />
             &lt;/a&gt;
             </code>
@@ -115,7 +115,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="myPdfLink" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf"&gt; <br />
+            &lt;a class="myPdfLink" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2.gsp&filename=sample.pdf&method=get"&gt; <br />
             &lt;img border="0" alt="PDF Version" src="/pdf/images/pdf_button.png" /&gt; <br />
             Custom link<br />
             &lt;/a&gt;
