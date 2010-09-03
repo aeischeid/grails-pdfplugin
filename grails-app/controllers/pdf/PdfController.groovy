@@ -10,6 +10,7 @@ class PdfController {
     try{
       byte[] b
       def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort + grailsAttributes.getApplicationUri(request)
+      // def baseUri = g.createLink(uri:"/", absolute:"true").toString()
       if(params.method == "post") {
         def content
         if(params.template){
@@ -41,6 +42,7 @@ class PdfController {
     try{
       byte[] b
       def baseUri = request.scheme + "://" + request.serverName + ":" + request.serverPort + grailsAttributes.getApplicationUri(request)
+      // def baseUri = g.createLink(uri:"/", absolute:"true").toString()
       if(request.method == "GET") {
         def url = baseUri + params.url + '?' + request.getQueryString()
         //println "BaseUri is $baseUri"
@@ -54,7 +56,6 @@ class PdfController {
           content = g.render(template:params.template, model:[pdf:params])
         }
         else{
-          //println "GSP - Controller: $params.pdfController , Action: $params.pdfAction"
           content = g.include(controller:params.pdfController, action:params.pdfAction, id:params.id, params:params)
         }
         b = pdfService.buildPdfFromString(content.toString(), baseUri)
