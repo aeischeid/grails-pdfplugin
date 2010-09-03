@@ -144,7 +144,7 @@
         <tr>
           <td rowspan="2" >Simple Controller Action Usage:</td>
           <td>
-            <code>&lt;g:pdfLink controller="pdf" action="demo2"&gt;GSP as PDF&lt;/g:pdfLink&gt;</code>
+            <code>&lt;g:pdfLink pdfController="pdf" pdfAction="demo2"&gt;GSP as PDF&lt;/g:pdfLink&gt;</code>
           </td>
           <td rowspan="2">
             <g:pdfLink pdfController="pdf" pdfAction="demo2">GSP as PDF</g:pdfLink>
@@ -153,7 +153,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?&filename=document.pdf"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?&pdfController=pdf&pdfAction=demo2&pdfParams=null&filename=document.pdf"&gt;<br />
             PDF View <br />
             &lt;/a&gt;
             </code>
