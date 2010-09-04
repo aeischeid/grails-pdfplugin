@@ -43,7 +43,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2&filename=document.pdf"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2"&gt;<br />
             PDF View <br />
             &lt;/a&gt;
             </code>
@@ -61,7 +61,7 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2%2F5%3Fname%3Dbob%26age%3D22&filename=document.pdf"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?url=%2Fpdf%2Fdemo2%2F5%3Fname%3Dbob%26age%3D22"&gt;<br />
             PDF View <br />
             &lt;/a&gt;
             </code>
@@ -123,7 +123,7 @@
           </td>
         </tr>
         <tr><td colspan="3"><em>String method examples:</em></td></tr>
-        <tr>
+  %{--  <tr>
           <td rowspan="2" >Simple Template Usage:</td>
           <td>
             <code>&lt;g:pdfLink template="demo2"&gt;template as PDF&lt;/g:pdfLink&gt;</code>
@@ -140,9 +140,9 @@
             &lt;/a&gt;
             </code>
           </td>
-        </tr>
+        </tr> --}%
         <tr>
-          <td rowspan="2" >Simple Controller Action Usage:</td>
+          <td rowspan="2" >Simple Controller Action Usage (action and id are optional):</td>
           <td>
             <code>&lt;g:pdfLink pdfController="pdf" pdfAction="demo2"&gt;GSP as PDF&lt;/g:pdfLink&gt;</code>
           </td>
@@ -153,7 +153,25 @@
         <tr>
           <td>
             <code>
-            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?&pdfController=pdf&pdfAction=demo2&pdfParams=null&filename=document.pdf"&gt;<br />
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?&pdfController=pdf&pdfAction=demo2"&gt;<br />
+            PDF View <br />
+            &lt;/a&gt;
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2" >Simple Controller Action + Id Usage:</td>
+          <td>
+            <code>&lt;g:pdfLink pdfController="pdf" pdfAction="demo2" pdfId="65432"&gt;GSP as PDF&lt;/g:pdfLink&gt;</code>
+          </td>
+          <td rowspan="2">
+            <g:pdfLink pdfController="pdf" pdfAction="demo2" pdfId="65432">GSP as PDF</g:pdfLink>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>
+            &lt;a class="pdf" title="pdf" href="/pdf/pdf/pdfLink?&pdfController=pdf&pdfAction=demo2&pdfId=65432"&gt;<br />
             PDF View <br />
             &lt;/a&gt;
             </code>

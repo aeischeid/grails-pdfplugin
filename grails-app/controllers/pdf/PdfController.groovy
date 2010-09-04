@@ -57,7 +57,7 @@ class PdfController {
           content = g.render(template:params.template, model:[pdf:params])
         }
         else{
-          content = g.include(controller:params.pdfController, action:params.pdfAction, id:params.id, params:params)
+          content = g.include(controller:params.pdfController, action:params.pdfAction, id:params.id, pdf:params)
         }
         b = pdfService.buildPdfFromString(content.readAsString(), baseUri)
       }

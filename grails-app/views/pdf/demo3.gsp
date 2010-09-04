@@ -52,6 +52,7 @@
     
     <h3>Here is some information gathered from a form and handled by a controller (post variables):</h3>
     <p>Favorite food: ${pdf?.food}</p>
+    <p>Favorite food: ${pdf?.food.toString()}</p>
     <p>Hometown: ${pdf?.hometown}</p> 
     
     <p>${pdf}</p>
