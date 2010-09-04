@@ -1,7 +1,6 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="layout" content="main" />
     <title>Simple PDF demo2</title>
     <style>
       .sample_table {
@@ -49,22 +48,19 @@
         </tr>
       </tbody>
     </table> 
-    
-%{--	For some reason checkboxes cause major error with pdf renderer. uncomment this to see    --}%
-    <input type="checkbox" />
-    
-    <p>Images with relative URL's won't render in PDFs generated via post method because XHTMLrenderer is unaware of the baseUri:</p>
     <img src="<g:resource dir='images' file='laptop.jpg' />" alt="laptop" title="laptop" />
     
-    <p>However images with absolute URI's do just fine:</p>
-    <img src="http://system76.com/images/nb1_front_med.jpg" alt="laptop2" title="laptop2" />
-    
-    <h3>Here is some information gathered from a form and handled by a controller (post variables):</h3>
-    <p>Favorite food: ${pdf?.food}</p>
-    <p>Hometown: ${pdf?.hometown}</p> 
+    <form>
+      <p>checkbox:
+    %{--	checkboxes used to cause an error in pdf generation, but now they simply don't show up...   --}%
+        <input type="checkbox" checked="checked" name="sample_box" title="sample_box" /> 
+      </p>
+  %{--    text field sample   --}%
+      <p>Text Input:
+       <input name="textField" />
+      </p>
+    </form>
     
     <p>One way to style gsp's that you intend to make into pdf's is to have two seperate style sheets one for media="print" and one for media="screen". The print style sheet will be used to style the PDF, and if PDF generation fails you will get a styled HTML view that isn't all weird because of fonts sized in pt and such.</p>
-    
-    <p>Varialbles passed into gsp that the plugin will render as PDF need to start with pdf. so for example the form field name was hometown and to reference that varialbe here we needed {pdf.hometown}</p>
   </body>
 </html>

@@ -15,28 +15,31 @@ class PdfTagLib {
     */
 
   def pdfLink = { attrs, body ->
-    String template = attrs['template']
+    //String template = attrs['template']
     String pdfController = attrs['pdfController']
     String pdfAction = attrs['pdfAction']
     String pdfId = attrs['pdfId']
-    String pdfParams = attrs['pdfParams']
+    //String pdfParams = attrs['pdfParams']
     String url = attrs['url']
-    String filename = attrs['filename'] ?: 'document.pdf'
+    String filename = attrs['filename']
     String link
     // class attribute is for CSS styling
     String c = attrs['class'] ?: 'pdf'
     if(url){
-      link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
-             params: [url: attrs.url, filename: "${filename}"] ] )
+      link = new ApplicationTagLib().createLink(url: [controller:'pdf', action:'pdfLink',
+             params: [url: attrs.url] ] )
     }
-    if(template){
-      link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
-             params: [template: "${template}", filename: "${filename}"] ] )
-    }
+    //if(template){
+      //link = new ApplicationTagLib().createLink(url: [controller:'pdf', action:'pdfLink',
+             //params: [template: "${template}"] ] )
+    //}
     if(pdfController){
-      link = new ApplicationTagLib().createLink(url: [controller: 'pdf', action:'pdfLink',
-             params: [pdfController: "${pdfController}", pdfAction: "${pdfAction}", pdfParams: "${pdfParams}", filename: "${filename}"] ] )
+      link = new ApplicationTagLib().createLink(url: [controller:'pdf', action:'pdfLink',
+             params: [pdfController:"${pdfController}"] ] )
+      if(pdfAction) link += "&pdfAction=${pdfAction}"
+      if(pdfId) link+= "&pdfId=${pdfId}"
     }
+    if(filename){ link += "&filename=${filename}" }
     out << """
       <a href="${link}" class="${c}" title="pdf">
     """
