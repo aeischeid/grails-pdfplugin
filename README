@@ -14,7 +14,7 @@ Or you can use the zip file on Github.
 <------------>
     Notes:
 <------------>
-pending 0.5 version. Fix for major brokenness. POST type requests weren't
+pending 0.6 version. Fix for major brokenness. POST type requests weren't
 working. Other significant piece is packaging and get a new version into the 
 official grails repos thanks to the new zipOnly option this should be easier. 
 Next will be ... I don't know?
@@ -69,9 +69,9 @@ attributes:
                             - defualt = 'document.pdf'
     * icon (optional) - will add an <img … /> tag
     * class (optional) - set the class of element - default = 'pdf'
-    * template (optional) - render given template gsp as a pdf (since 0.5)
-    * controller (optional) - like you would expect... (since 0.5)
-    * action (optional) - like you would expect... (since 0.5)
+    * pdfController (optional) - like you would expect... (since 0.5)
+    * pdfAction (optional) - like you would expect... (since 0.5)
+    * pdfId (optional) - like you would expect... (since 0.5)
 
 g:pdfForm
 attributes:
