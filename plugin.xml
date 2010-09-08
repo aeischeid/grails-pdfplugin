@@ -10,11 +10,13 @@
     </description>
   <documentation>http://grails.org/Pdf+Plugin</documentation>
   <resources>
-    <resource>PdfTagLib</resource>
-    <resource>PdfController</resource>
-    <resource>UrlMappings</resource>
+    <resource>BuildConfig</resource>
     <resource>DataSource</resource>
-    <resource>PdfService</resource>
+    <resource>UrlMappings</resource>
+    <resource>pdf.PdfController</resource>
+    <resource>pdf.PdfService</resource>
+    <resource>pdf.PdfTagLib</resource>
   </resources>
   <dependencies />
+  <behavior />
 </plugin>
