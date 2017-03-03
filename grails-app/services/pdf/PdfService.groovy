@@ -3,7 +3,7 @@ package pdf
 import net.sf.ehcache.*
 import net.sf.ehcache.store.*
 import org.apache.commons.logging.LogFactory
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
+//import org.codehaus.groovy.grails.commons.ConfigurationHolder
 import org.xhtmlrenderer.pdf.ITextRenderer
 
 class PdfService {
